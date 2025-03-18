@@ -147,12 +147,12 @@ if train:
             action, _states = model.predict(obs, deterministic=True)  # Choose optimal action
             obs, reward, done, info = env.step(action)
             total_reward += reward
-            step_count += 1  # 记录步数
+            step_count += 1  # Conunt step (Not necessary, just for test)
             
             
             wandb.log({
                 "epoch": epoch+1,
-                "step_in_epoch": step_count,
+                # "step_in_epoch": step_count,
                 "reward": reward,
                 "total_reward": total_reward,
                 "id": obs[0,0],
